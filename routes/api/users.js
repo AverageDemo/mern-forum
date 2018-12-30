@@ -136,7 +136,8 @@ router.get("/activate/:token", (req, res) => {
                 return res.status(404).json({ msg: "Invalid token" });
             }
 
-            new Profile({ handle: user.username, user: user._id }).save();
+            // Will added for now to remember to do this for profiles later on
+            //new Profile({ handle: user.username, user: user._id }).save();
 
             res.json({ msg: "Account activated" });
         })
