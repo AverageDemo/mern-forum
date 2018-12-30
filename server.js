@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 const users = require("./routes/api/users");
 const admin = require("./routes/api/admin");
+const forum = require("./routes/api/forum");
 
 const app = express();
 
@@ -28,6 +29,7 @@ require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use("/api/admin", admin);
+app.use("/api/forum", forum);
 
 const port = process.env.PORT || 5000;
 
