@@ -1,5 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
+const passport = require("passport");
 const bcryptjs = require("bcryptjs");
 const gravatar = require("gravatar");
 const randString = require("randomstring");
@@ -11,6 +12,7 @@ const validateRegisterInput = require("../../validation/register");
 
 const keys = require("../../config/keys");
 const User = require("../../models/User");
+const Usergroup = require("../../models/Usergroup");
 
 /*
  * @route   POST api/users/register
@@ -142,6 +144,17 @@ router.get("/activate/:token", (req, res) => {
             res.json({ msg: "Account activated" });
         })
         .catch(err => console.log(err));
+});
+
+/*
+ * @route   GET api/users/getAdmins
+ * @desc    Fetch all administrative usergroups
+ * @access  Private
+ */
+router.get("/getAdmins", (req, res) => {
+    Usergroup.find({ "permissions.isAdmin": true }).then(usergroup => {
+        res.json({ usergroup });
+    });
 });
 
 module.exports = router;
