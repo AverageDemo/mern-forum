@@ -6,6 +6,16 @@ const UsergroupSchema = new Schema({
         type: String,
         required: true
     },
+    usergroupStyle: {
+        type: String,
+        required: true,
+        default: "<b>{usergroup}</b>"
+    },
+    displayOrder: {
+        type: Number,
+        required: true,
+        default: 0
+    },
     permissions: {
         isAdmin: {
             type: Boolean,

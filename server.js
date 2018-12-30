@@ -8,10 +8,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const keys = require("./config/keys");
+
 mongoose.set("useFindAndModify", false);
 mongoose
     .connect(
-        "mongodb://localhost:27017/mern-forum",
+        keys.mongoURI,
         { useNewUrlParser: true }
     )
     .then(() => console.log("MongoDB Connected"))
