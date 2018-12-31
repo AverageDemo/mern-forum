@@ -1,5 +1,5 @@
 body {
-    min-height: 75rem;
+    min-height: 100vh;
 }
 .container {
     max-width: 50%;
@@ -53,4 +53,17 @@ body {
 }
 .lh-150 {
     line-height: 1.5;
+}
+.forum-banner-name {
+    font-size: 1em;
+    font-weight: bold;
+}
+.forum-banner-tag {
+    font-size: 0.9em;
+}
+.nav-scroller > .nav > .nav-link {
+    color: #000 !important;
+}
+.content-box {
+    min-height: 100vh;
 }
