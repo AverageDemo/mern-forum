@@ -56,6 +56,9 @@ class Register extends Component {
                                         value={this.state.username}
                                         onChange={this.onChange}
                                     />
+                                    {errors.username && (
+                                        <div className="invalid-feedback">{errors.username}</div>
+                                    )}
                                 </div>
                                 <div className="form-group">
                                     <input
@@ -68,6 +71,9 @@ class Register extends Component {
                                         value={this.state.name}
                                         onChange={this.onChange}
                                     />
+                                    {errors.name && (
+                                        <div className="invalid-feedback">{errors.name}</div>
+                                    )}
                                 </div>
                                 <div className="form-group">
                                     <input
@@ -80,6 +86,9 @@ class Register extends Component {
                                         value={this.state.email}
                                         onChange={this.onChange}
                                     />
+                                    {errors.email && (
+                                        <div className="invalid-feedback">{errors.email}</div>
+                                    )}
                                 </div>
                                 <div className="form-group">
                                     <input
@@ -92,6 +101,9 @@ class Register extends Component {
                                         value={this.state.password}
                                         onChange={this.onChange}
                                     />
+                                    {errors.password && (
+                                        <div className="invalid-feedback">{errors.password}</div>
+                                    )}
                                 </div>
                                 <div className="form-group">
                                     <input
@@ -104,6 +116,9 @@ class Register extends Component {
                                         value={this.state.password2}
                                         onChange={this.onChange}
                                     />
+                                    {errors.password2 && (
+                                        <div className="invalid-feedback">{errors.password2}</div>
+                                    )}
                                 </div>
                                 <input type="submit" className="btn btn-info btn-block mt-4" />
                             </form>
