@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
     render() {
         return (
             <div>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <a className="navbar-brand text-white">MERN Forum</a>
+                    <Link className="navbar-brand text-white" to="/">
+                        MERN Forum
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -19,34 +22,31 @@ class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link">
-                                    Home <span className="sr-only">(current)</span>
-                                </a>
-                            </li>
                             <li className="nav-item">
-                                <a className="nav-link">Link</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled">Disabled</a>
+                                <Link className="nav-link" to="/">
+                                    Home
+                                </Link>
                             </li>
                         </ul>
-                        <form className="form-inline mt-2 mt-md-0">
-                            <input
-                                className="form-control mr-sm-2"
-                                type="text"
-                                placeholder="Search"
-                                aria-label="Search"
-                            />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-                                Search
-                            </button>
-                        </form>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/register">
+                                    Sign Up
+                                </Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/login">
+                                    Login
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
                 <div className="nav-scroller bg-white shadow-sm">
                     <nav className="nav nav-underline">
-                        <a className="nav-link active">Placeholder</a>
+                        <Link className="nav-link" to="#">
+                            Placeholder
+                        </Link>
                     </nav>
                 </div>
             </div>
